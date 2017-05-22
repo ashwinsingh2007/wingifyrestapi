@@ -42,14 +42,14 @@ This app is already deployed on heroku , so you can quickly start here.
         *LIMITATION : Id of the Products cannot be updated.
  
  ### 4.)GET Product :
-##### JSON Format - {"Id":"[STRING]","Name":"[STRING]","Price":[NUMBER],"Description":"[STRING]","Quantity":[NUMBER]}
+##### JSON Format - "No JSON Required"
         Method : GET.
         GET URL : https://wingifyrestapi.herokuapp.com/online/products?[options].
         options : 
             i)   "?limit=[NUMBER]" - Will get specified number of product data
             ii)  "?where=[STRING]/[NUMBER]" - Will get product data by filter criteria like "?where=Quantity>10" or "?where=Name='Rackets'" etc.
             iii) "?limit=[NUMBER]&where=[STRING]/[NUMBER]" - Will have functionality for both above two points.
-            iv)  "?where=*" - Will filter product data which are created or inserted by the current user.(Pass Authentication{username,password} for this).
+            iv)  "?where='*'" - Will filter product data which are created or inserted by the current user.(Pass Authentication{username,password} for this).
             iv)  "?limit=[NUMBER]&where=*" - Will filter product data which are created or inserted by the current user also limits the amount of data to be rendered.(Pass Authentication{username,password} for this).
             
         
@@ -60,9 +60,9 @@ This app is already deployed on heroku , so you can quickly start here.
         *Note2 : Any user can request and get the result.
 
  ### 3.)DELETE Product :
-##### JSON Format - {"Id":"[STRING]","Name":"[STRING]","Price":[NUMBER],"Description":"[STRING]","Quantity":[NUMBER]}
+##### JSON Format - "No JSON Required"
         Method : DELETE.
-        PUT URL : https://wingifyrestapi.herokuapp.com/online/products/delete?Id=[STRING]
+        DELETE URL : https://wingifyrestapi.herokuapp.com/online/products/delete?Id=[STRING]
         Authentication : {username,passsord} (Try POSTMAN)
         Body :  Not required.
        

@@ -6,6 +6,7 @@
 var http = require('http');
 var qs = require('querystring');
 var url = require('url');
+var fs = require('fs');
 var db = require('./db')
 var dbO = require('./DBOperations')
 try {
@@ -13,9 +14,20 @@ try {
         var html = res;
         var urlParse = url.parse(req.url, true)
         var pathname = urlParse.pathname;
+        var data = '';
+        if (req.method == 'GET' && pathname == '/') {
+            try {
+                fs.createReadStream('index.html').on('data', function(chunk) {
+                    data = data + chunk;
+                }).on('end', function(chunk) {
+                    html.end(data);
+                });
+            } catch (ex) {
+                html.end("Internal server error!!")
+            }
 
-        //Sign Up
-        if (req.method == 'POST' && pathname == '/signup') {
+
+        } else if (req.method == 'POST' && pathname == '/signup') { //Sign Up
             var auth_key = new Buffer(req.headers.authorization.split(' ')[1], 'base64');
             dbO.CreateUser(auth_key, html);
 

@@ -1,0 +1,1479 @@
+<p align="center">
+    <strong>WingifyRestAPI Design Doc</strong>
+</p>
+<p>
+    <strong></strong>
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="106" valign="top">
+                <p>
+                    <strong>Version</strong>
+                </p>
+            </td>
+            <td width="137" valign="top">
+                <p>
+                    <strong>Date</strong>
+                </p>
+            </td>
+            <td width="206" valign="top">
+                <p>
+                    <strong>Author</strong>
+                </p>
+            </td>
+            <td width="147" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="106" valign="top">
+                <p>
+                    1.0
+                </p>
+            </td>
+            <td width="137" valign="top">
+                <p>
+                    22-May-2017
+                </p>
+            </td>
+            <td width="206" valign="top">
+                <p>
+                    Ashwani Kumar
+                </p>
+            </td>
+            <td width="147" valign="top">
+                <p>
+                    Development
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong> </strong>
+</p>
+<h2>
+    <a name="_jiqojry61jpd"></a>
+</h2>
+<h2>
+    <a name="_khgc4j6re6x1"></a>
+</h2>
+<h2>
+    <a name="_m1mjvlf9q4hz"></a>
+</h2>
+<br clear="all" />
+<h2>
+    <a name="_yfrcd2koc7we"></a>
+</h2>
+<p align="right">
+    <a name="_2k160dq1pfh6"></a>
+    Index
+</p>
+<p>
+    <strong>
+        <a
+            href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_bit7idv2ancx"
+        >
+            1. About
+        </a>
+        <u></u>
+    </strong>
+</p>
+<p>
+    <strong> <u>Design </u></strong>
+</p>
+<p>
+    <strong> <u>Authentication</u></strong>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_bit7idv2ancx">
+        2.
+    </a>
+    <u>Signup</u>
+</p>
+<p>
+    <u>
+        <a
+            href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_kd6tjl5w5wjo"
+        >
+            Request
+        </a>
+    </u>
+</p>
+<p>
+    <u>
+        <a
+            href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_8b7ijrpuamb8"
+        >
+            Response
+        </a>
+    </u>
+</p>
+<p>
+    <u>3. POST (Insert product data)</u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_38pypefkb82">
+        Request
+    </a>
+    <u></u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_47awg09ehquu">
+        Response
+    </a>
+    <u></u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_9mc75gzfq3m3">
+        4. GET
+    </a>
+    <u> (get all product with/without filteration)</u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_xtszbus9yomc">
+        Request
+    </a>
+    <u></u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_xuhh3y4ufz7">
+        Response
+    </a>
+    <u></u>
+</p>
+<p>
+    <u>5. PUT (Update Product data)</u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_iaps2dh7l2m2">
+        Request
+    </a>
+    <u></u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_fvf6lulvf6wv">
+        Response
+    </a>
+    <u></u>
+</p>
+<p>
+    <u>6. DELETE (Delete Product data)</u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_iaps2dh7l2m2">
+        Request
+    </a>
+    <u></u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_fvf6lulvf6wv">
+        Response
+    </a>
+    <u></u>
+</p>
+<p>
+    <u></u>
+</p>
+<p>
+    <u></u>
+</p>
+<p>
+    <u>Conventions</u>
+</p>
+<p>
+    <a href="file:///C:/Users/home/Downloads/WebserviceAPISpecificationDocTemplate.docx#_of6ke88xwee4">
+        Status Codes
+    </a>
+    <u></u>
+</p>
+<h2>
+    <a name="_jupl1bnjgjda"></a>
+</h2>
+<h2>
+    1. <u>About</u>
+</h2>
+<p>
+    WingifyrestAPI is RESTful API for an online store which can be used to manage different products.
+</p>
+<h2>
+    Design :
+</h2>
+<p>
+    Ø This Restful API is build using NodeJS and uses MySQL for database interaction.
+</p>
+<p>
+    Ø It uses simple basic authentication and only authenticated user can <strong>create, update, delete</strong> the products details
+</p>
+<p>
+    Ø Data Flow :
+</p>
+<p>
+    1. User will first signup for the API. See below document for signup process.
+</p>
+<p>
+    2. On each and every POST,PUT,DELETE, he needs to send the
+</p>
+<p>
+    <strong>Basic Authentication Key</strong> generated using his signup username and password.
+</p>
+<p>
+    3. For inserting product details he needs to request a URL,authentication key in header and JSON formatted data in Body. See below section for more details.
+</p>
+<p>
+    4. He can further Update and Delete the product details which are only created by him. See below section for update and delete operation.
+</p>
+<p>
+    5. In this way security is maintained.
+</p>
+<p>
+    6. Update of product details can be proceeded by PUT method and request
+</p>
+<p>
+    a URL as mentioned in below sections.
+</p>
+<p>
+    7. Similarly Deletion can be done but he can only delete those data which are created by him.
+</p>
+<h2>
+    Implementation Description :
+</h2>
+<p>
+    Ø NodeJS :
+</p>
+<p>
+    o Backend is implemented in NodeJS without using any Framework.
+</p>
+<p>
+    o main.js is main file to be executed in cmd or terminal.
+</p>
+<p>
+    o db.js file contains codes for interaction with MySQL.
+</p>
+<p>
+    o dbOperation.js file is a middleware file in between requests and MySQL interaction.
+</p>
+<p>
+    Ø Modules used in NodeJS:
+</p>
+<p>
+    o Mysql – For MySQL interaction.
+</p>
+<p>
+    o
+</p>
+<h2>
+    <a name="_jczofp3hlih3"></a>
+</h2>
+<br clear="all" />
+<h2>
+    <a name="_7ad4ze4y8cx"></a>
+</h2>
+<p align="right">
+    <a name="_77kp9bjgsn01"></a>
+    Methods
+</p>
+<h2>
+    <a name="_bit7idv2ancx"></a>
+    2. <u>Signup</u>
+</h2>
+<p>
+    To allow user to sign up for the API uses and generation of basic authentication key.
+</p>
+<h2>
+    <a name="_kd6tjl5w5wjo"></a>
+    Request
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="594">
+    <tbody>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>Method</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    <strong>URL </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>POST</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    https://wingifyrestapi.herokuapp.com/signup
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="208" valign="top">
+                <p>
+                    <strong>Params</strong>
+                </p>
+            </td>
+            <td width="304" valign="top">
+                <p>
+                    <strong>Values</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    HEAD
+                </p>
+                <p>
+                    POST
+                </p>
+                <p>
+                    POST
+                </p>
+            </td>
+            <td width="208" valign="top">
+                <p>
+                    api_key
+                </p>
+                <p>
+                    username
+                </p>
+                <p>
+                    password
+                </p>
+            </td>
+            <td width="304" valign="top">
+                <p>
+                    string
+                </p>
+                <p>
+                    string
+                </p>
+                <p>
+                    string
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<p>
+    <strong>api_key</strong>
+</p>
+<p>
+    api_key must be sent with all client requests. The api_key helps the server to validate the request source.
+</p>
+<h2>
+    <a name="_8b7ijrpuamb8"></a>
+    Response
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    <strong>Status</strong>
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>Response</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Signup Successfully !
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Invalid Request :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Internal Server failure :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Login Failure. May be invalid username or password
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Oops! Something went wrong. Check your request :(
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    <a name="_9t094e45sg90"></a>
+    3. <u>POST (Insert product data)</u>
+</h2>
+<p>
+    Used to insert product data only by registered users or authorized users.
+</p>
+<h2>
+    <a name="_38pypefkb82"></a>
+    Request
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="594">
+    <tbody>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>Method</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    <strong>URL </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>POST</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    https://wingifyrestapi.herokuapp.com/online/products
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="368" valign="top">
+                <p>
+                    <strong>Params</strong>
+                </p>
+            </td>
+            <td width="145" valign="top">
+                <p>
+                    <strong>Values</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    HEAD
+                </p>
+                <p>
+                    BODY
+                </p>
+            </td>
+            <td width="368" valign="top">
+                <p>
+                    auth_key(basic authentication key build from username and password. Use PostMan for this)
+                </p>
+                <p>
+                    {"Id":"[STRING]","Name":"[STRING]","Price":[NUMBER],"Description":"[STRING]","Quantity":[NUMBER]}
+                </p>
+                <p>
+                    (JSON Format)
+                </p>
+            </td>
+            <td width="145" valign="top">
+                <p>
+                    String
+                </p>
+                <p>
+                    JSON
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <strong></strong>
+</p>
+<p>
+    <strong>auth_key</strong>
+</p>
+<p>
+    The basic auth_key which is created by username and password. <strong></strong>
+</p>
+<p>
+    <strong></strong>
+</p>
+<pre><code><strong>*Note1</strong></code><code> : The API may give you Invalid parameter or Wrong JSON Format in case of wrong     </code></pre>
+<pre><code>URL request or wrong JSON respectively.</code></pre>
+<pre><code></code></pre>
+<pre><code><strong>*Note2</strong></code><code> : Only the authorized person with the username and password will be able to create data. </code></pre>
+<pre><code>Also He can update/delete the product data's which is only created by him </code></pre>
+<h2>
+    <a name="_47awg09ehquu"></a>
+    Response
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    <strong>Status</strong>
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>Response</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>
+                        Response will be an JSON object containing the list of
+                        recipes (array)
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        as well as the updated recipe database. Each item in
+                        the recipe array has the following structure.
+                    </strong>
+                </p>
+                <p>
+                    Successfully Inserted !!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Invalid Request :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Wrong JSON Format !! OR Item with ID is already Present!!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Authorization Failure
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Internal Server failure :(
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    <a name="_9mc75gzfq3m3"></a>
+    4. GET (get all product with/without filtration).
+</h2>
+<p>
+    Get the product information and details. There are two versions of this method provided.
+</p>
+<p>
+    The one used by all end users without authentication.
+</p>
+<p>
+    The other is used by authenticated user to get the product data which are created by them.
+</p>
+<h2>
+    <a name="_xtszbus9yomc"></a>
+    Request
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="687">
+    <tbody>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>Method</strong>
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    <strong>URL </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>GET</strong>
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <p>
+                    https://wingifyrestapi.herokuapp.com/online/products?[options]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>URL Params</strong>
+                </p>
+            </td>
+            <td width="576" valign="top">
+                <pre><code>1.    </code><code>"?limit=[NUMBER]" :- Will get specified number of product data.</code></pre>
+                <pre><code></code></pre>
+                <pre><code>2.    </code><code>"?where=[STRING]/[NUMBER]"  :- Will get product data by filter criteria like "?where=Quantity&gt;10" or "?where=Name='Rackets'" etc.</code></pre>
+                <pre><code></code></pre>
+                <pre><code>3.    </code><code>"?limit=[NUMBER]&amp;where=[STRING]/[NUMBER]" : - Will have functionality for both above two points.</code></pre>
+                <pre><code></code></pre>
+                <pre><code>4.    </code><code>"?where='*'"  :- Will filter product data which are created or inserted by the current user.(Pass Authentication{username, password} for this).</code></pre>
+                <pre><code></code></pre>
+                <pre>5.    <code>"?limit=[NUMBER]&amp;where=*" - Will filter product data which are created or inserted by the current user also limits the amount of data to be rendered.(Pass Authentication{username, password} for this).</code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pre></pre>
+<pre><code><strong>[options] : </strong></code></pre>
+<pre><code><strong></strong></code></pre>
+<pre><code>6.    </code><code>"?limit=[NUMBER]" :- Will get specified number of product data.</code></pre>
+<pre><code></code></pre>
+<pre><code>7.    </code><code>"?where=[STRING]/[NUMBER]"  :- Will get product data by filter criteria like "?where=Quantity&gt;10" </code></pre>
+<pre><code>or "?where=Name='Rackets'" etc.</code></pre>
+<pre><code></code></pre>
+<pre><code>8.    </code><code>"?limit=[NUMBER]&amp;where=[STRING]/[NUMBER]" : - Will have functionality for both above two points.</code></pre>
+<pre><code></code></pre>
+<pre><code>9.    </code><code>"?where='*'"  :- Will filter product data which are created or inserted by the current user.</code></pre>
+<pre><code>(Pass Authentication{username, password} for this).</code></pre>
+<pre><code></code></pre>
+<pre><code>10.  </code><code>"?limit=[NUMBER]&amp;where=*" - Will filter product data which are created or inserted by the current </code></pre>
+<pre><code>user also limits the amount of data to be rendered.(Pass Authentication{username, password} for this).</code></pre>
+<pre><code>       </code></pre>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="386" valign="top">
+                <p>
+                    <strong>Params</strong>
+                </p>
+            </td>
+            <td width="126" valign="top">
+                <p>
+                    <strong>Values</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    HEAD
+                </p>
+            </td>
+            <td width="386" valign="top">
+                <p>
+                    auth_key(basic authentication key build from username and password. Use PostMan for this)
+                </p>
+                <p>
+                    (required only when "https://wingifyrestapi.herokuapp.com/online
+                </p>
+                <p>
+                    /products?where=*" is requested)
+                </p>
+            </td>
+            <td width="126" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    <a name="_xuhh3y4ufz7"></a>
+    Response
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    <strong>Status</strong>
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>Response</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>A json containing the Product details.</strong>
+                </p>
+                <p>
+                    <strong>
+                        The JSON will depend upon the filter criteria or limit
+                        requested
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        by user.Also authenticated user can have filter as “
+                        where=’*’ ”
+                    </strong>
+                </p>
+                <p>
+                    <strong>
+                        for getting JSON for only those product that he has
+                        created.
+                    </strong>
+                </p>
+                <p>
+                    <strong> </strong>
+                </p>
+                <p>
+                    Example response:-
+                </p>
+                <p>
+                    [{"Id":"1","Name":"Tennis Ball","Price":2000,"Description":"N/A","Quantity":7,"username":""},{"Id":"200","Name":"Racket","Price":4000,"Description":"N/A","Quantity":10,"username":""}]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Invalid Request :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Authorization Failure
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Internal Server failure :(
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    <a name="_p8sbwmpv82e8"></a>
+    5. <u>PUT (Update Product data)</u>
+</h2>
+<p>
+    This request will update that item/products details which is only created by the current authenticated user.
+</p>
+<h2>
+    <a name="_iaps2dh7l2m2"></a>
+    Request
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="594">
+    <tbody>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>Method</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    <strong>URL </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="72" valign="top">
+                <p>
+                    <strong>PUT</strong>
+                </p>
+            </td>
+            <td width="522" valign="top">
+                <p>
+                    https://wingifyrestapi.herokuapp.com/online/products
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="377" valign="top">
+                <p>
+                    <strong>Params</strong>
+                </p>
+            </td>
+            <td width="136" valign="top">
+                <p>
+                    <strong>Values</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    HEAD
+                </p>
+                <p>
+                    BODY
+                </p>
+            </td>
+            <td width="377" valign="top">
+                <p>
+                    auth_key(basic authentication key build from username and password. Use PostMan for this)
+                </p>
+                <p>
+                    JSON Format - {"Id":"[STRING]","Name":"[STRING]",
+                </p>
+                <p>
+                    "Price":[NUMBER],"Description":"[STRING]",
+                </p>
+                <p>
+                    "Quantity":[NUMBER]}
+                </p>
+                <p>
+                    (Product details to be updated.)
+                </p>
+            </td>
+            <td width="136" valign="top">
+                <p>
+                    String
+                </p>
+                <p>
+                    JSON
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    <a name="_fvf6lulvf6wv"></a>
+    Response
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    <strong>Status</strong>
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>Response</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Item Updated succesfully!!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Invalid Request :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Wrong JSON Format !! OR Item with ID is already Present!!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Authorization Failure
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Internal Server failure :(
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pre><a name="_vc9rzjqhi75w"></a><code>*Note1 : The API may give you Invalid parameter or Wrong JSON Format in case of wrong url request or wrong json respectively.</code></pre>
+<pre><code></code></pre>
+<pre><code>*Note2 : Incase if you the admin wants to update only on column, his body JSON must contain the updated value for the key and rest previous values for the key. </code></pre>
+<pre><code></code></pre>
+<pre><code>*Note3 : Items or Products can only be updated by there Id. </code></pre>
+<pre><code>  </code></pre>
+<pre><code>*Note4 : Only the user created/inserted the product data will be able to update it.</code></pre>
+<pre><code></code></pre>
+<pre><code>*LIMITATION : Id of the Products cannot be updated.</code></pre>
+<p align="right">
+    <a name="_ul02m4486h22"></a>
+</p>
+<strong>
+    <br clear="all"/>
+</strong>
+<h2>
+    5. <u>DELETE (Product data by Id)</u>
+</h2>
+<p>
+    This request will delete that item/products details which is only created by the current authenticated user.
+</p>
+<h2>
+    Request
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="621">
+    <tbody>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>Method</strong>
+                </p>
+            </td>
+            <td width="510" valign="top">
+                <p>
+                    <strong>URL </strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>DELETE</strong>
+                </p>
+            </td>
+            <td width="510" valign="top">
+                <p>
+                    <a href="https://wingifyrestapi.herokuapp.com/online/products">
+                        https://wingifyrestapi.herokuapp.com/online/products
+                    </a>
+                </p>
+                <p>
+                    /delete?Id=[STRING]
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="111" valign="top">
+                <p>
+                    <strong>URL Param</strong>
+                </p>
+            </td>
+            <td width="510" valign="top">
+                <p>
+                    ?Id=[STRING]
+                </p>
+                <p>
+                    Example :
+                </p>
+                <p>
+                    <a href="https://wingifyrestapi.herokuapp.com/online/products">
+                        https://wingifyrestapi.herokuapp.com/online/products
+                    </a>
+                </p>
+                <p>
+                    /delete?Id=”120”
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table border="1" cellspacing="0" cellpadding="0" width="596">
+    <tbody>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    <strong>Type</strong>
+                </p>
+            </td>
+            <td width="377" valign="top">
+                <p>
+                    <strong>Params</strong>
+                </p>
+            </td>
+            <td width="136" valign="top">
+                <p>
+                    <strong>Values</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="83" valign="top">
+                <p>
+                    HEAD
+                </p>
+            </td>
+            <td width="377" valign="top">
+                <p>
+                    auth_key(basic authentication key build from username and password. Use PostMan for this)
+                </p>
+            </td>
+            <td width="136" valign="top">
+                <p>
+                    String
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2>
+    Response
+</h2>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    <strong>Status</strong>
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    <strong>Response</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Item deleted succesfully !!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Invalid Request :(
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Wrong JSON Format !! OR Item with ID is already Present!!
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Authorization Failure
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="101" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="493" valign="top">
+                <p>
+                    Internal Server failure :(
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<pre></pre>
+<pre></pre>
+<pre><code><strong>*Note1</strong></code><code> : Only the user created/inserted the product data will be able to delete it.</code></pre>
+<p align="right">
+    <a name="_hq6gr5mmm9kk"></a>
+</p>
+<p align="right">
+    <a name="_y40m5v4vg0ny"></a>
+    Glossary
+</p>
+<h2>
+    <a name="_uk42zio712fb"></a>
+    Conventions
+</h2>
+<p>
+    ● <strong>Client</strong> - Client application.
+</p>
+<p>
+    ● <strong>Status</strong> - HTTP status code of response.
+</p>
+<p>
+    ● All the possible responses are listed under ‘Responses’ for each method. Only one of them is issued per request server.
+</p>
+<p>
+    ● All response are in JSON format. Except Error messages.
+</p>
+<p>
+    ● All request parameters are mandatory unless explicitly marked as [optional]
+</p>
+<h2>
+    <a name="_of6ke88xwee4"></a>
+    Status Codes
+</h2>
+<p>
+    All status codes are standard HTTP status codes. The below ones are used in this API.
+</p>
+<p>
+    2XX - Success of some kind
+</p>
+<p>
+    4XX - Error occurred in client’s part
+</p>
+<p>
+    5XX - Error occurred in server’s part
+</p>
+<table border="1" cellspacing="0" cellpadding="0" width="595">
+    <tbody>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    <strong>Status Code</strong>
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    <strong>Description</strong>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    200
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    OK
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    201
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Created
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    202
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Accepted (Request accepted, and queued for execution)
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    400
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Bad request
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    401
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Authentication failure
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    403
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Forbidden
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    404
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Resource not found
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    405
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Method Not Allowed
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    409
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Conflict
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    412
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Precondition Failed
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    413
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Request Entity Too Large
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    500
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Internal Server Error
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    501
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Not Implemented
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td width="112" valign="top">
+                <p>
+                    503
+                </p>
+            </td>
+            <td width="482" valign="top">
+                <p>
+                    Service Unavailable
+                </p>
+            </td>
+        </tr>
+    </tbody>
+</table>
