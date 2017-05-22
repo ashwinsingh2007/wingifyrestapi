@@ -64,7 +64,6 @@ var UpdateItem = function(postData, auth_key, html) {
             if (result) {
                 console.log("Authorized Successfully !!");
                 if ((!!postData) && (Object.keys(postData).length == 5) && (!!postData.Id) && (!!postData.Name) && (!!postData.Price) && (!!postData.Description) && (!!postData.Quantity)) {
-
                     db.updateItems(postData.Id, postData.Name, postData.Price, postData.Description, postData.Quantity, username, function(result) {
                         if (result) {
                             html.setHeader("Content-Type", "text/html");

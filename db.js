@@ -1,6 +1,9 @@
 "use strict"
 const crypto = require('crypto');
 var mysql = require('mysql');
+
+//Enter the configuration for your sql here. 
+
 var con = mysql.createPool({
     connectionLimit: 10,
     host: "166.62.28.137",
