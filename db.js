@@ -19,10 +19,11 @@ var CreateUser = function(username, password, callback) {
             const cipher = crypto.createCipher('aes192', 'password');
             var encryptedPassword = cipher.update(password, 'utf8', 'hex');
             encryptedPassword += cipher.final('hex');
-            query = "insert into stubuser values ('" + username + "','" + encryptedPassword + "')";
+            query = "insert into StubUser values ('" + username + "','" + encryptedPassword + "')";
             console.log(query);
             con.query(query, function(err, result) {
                 if (err) {
+                    console.log(err);
                     callback(false);
                 } else {
                     callback(true);
