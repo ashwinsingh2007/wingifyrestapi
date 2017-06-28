@@ -6,10 +6,10 @@ var mysql = require('mysql');
 
 var con = mysql.createPool({
     connectionLimit: 10,
-    host: "166.62.28.137",
-    user: "ashwinsingh2017",
-    password: "Ashw@ni2007",
-    database: "Wingify"
+    host: "",
+    user: "",
+    password: "",
+    database: ""
 });
 var CreateUser = function(username, password, callback) {
     var query = "select username, password from StubUser where username like '" + username + "'";
